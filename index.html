@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Emisoras IUD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+         <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ayuda</a>
+            </li>
+          </ul>
+          <div class="container">
+            <h1>Emisoras IUD Stereo</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+              <div class="col">
+                <audio autoplay id="reproductor">
+                    <source src="">
+                    Tu navegador no es compatible
+                </audio>
+                <i id="signal" class="fa-solid fa-signal fa-lg"></i>
+                <select onchange="changeSelectEmisoras(this)" id="select-emisoras" class="form-select" aria-label="Emisoras">
+                </select>
+              </div>
+              <div class="col">
+                <button onclick="play()" id="play" type="button" class="btn btn-outline-success">
+                    <i class="fa-solid fa-circle-play fa-lg"></i>
+                </button>
+                <button onclick="pause()" id="pause" type="button" class="btn btn-outline-danger">
+                    <i class="fa-solid fa-circle-pause fa-lg"></i>
+                </button>
+              </div>
+              <div class="col">
+                <input onchange="changeVolume(this)" type="range" class="form-range" id="volume" min="0" max="100"/>
+              </div>
+              <div class="col">
+                <img src="img/muchacha_bonita.jpg" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
