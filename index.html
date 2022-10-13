@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Emisora IUD Stereo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+        <link href="./img/favicon.ico" rel="shortcut icon"/>
+        <!--- PWA -->
+        <link rel="manifest" href="manifest.json" />
+        <!-- ios support -->
+        <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+        <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#013D56" />
+        <meta name="theme-color" content="#013D56" />
+        
+    </head>
+    <body>
+        <ul class="nav">
+            <!-- nav -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ayuda</a>
+            </li>
+        </ul>
+        <div class="container">
+            <h1>Emisora IUD Stereo</h1>
+            <!-- grids -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+              <div class="col">
+                <i id="signal" class="fa-solid fa-signal fa-lg"></i>
+                <audio controls autoplay id="reproductor">
+                    <source src="" />
+                  Your browser does not support the audio element.
+                </audio>
+                <select id="select-emisoras" class="form-select" aria-label="ejemplo"
+                onchange="changeSelectEmisoras(this)">
+                </select>
+              </div>
+              <div class="col">
+                  <button onclick="play()" id="play" type="button" class="btn btn-light"><i class="fa-solid fa-play"></i></button>
+                  <button onclick="pause()" id="pause" type="button" class="btn btn-light"><i class="fa-solid fa-pause"></i></button>
+                </div>
+              <div class="col">
+                <input onchange="changeVolume(this)" id="volume" type="range" class="form-range" id="customRange1" min="0" max="100" step="0.5"/>
+              </div>
+              <div class="col"><img src="./img/BOLETIN.jpg" class="img-fluid" alt=""></div>
+            </div>
+          </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
