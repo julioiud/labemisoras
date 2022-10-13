@@ -107,7 +107,9 @@ function changeSignal(){
 
 (function(){
     init();
+
 })();
+
 
 
 

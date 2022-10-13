@@ -36,6 +36,7 @@ que, como puede suponer, espera a que finalice la acción.
      * Luego devuelve una promesa, que nos ayuda a almacenar
      *  nuestros activos en el caché con cache.addAll(assets).
      */
+        console.log('open cache')
       cache.addAll(assets)
     })
   )
@@ -64,6 +65,7 @@ self.addEventListener("fetch", fetchEvent => {
          * podemos devolver el resultado si existe o 
          * la búsqueda inicial si no.
          */
+        console.log(res)
         return res || fetch(fetchEvent.request)
       })
     )
@@ -86,7 +88,7 @@ nuestro proyecto.
  */
 
 
-if ("serviceWorker" in navigator) {
+
     /**
  * Luego, escuchamos el evento de carga de la página 
  * para registrar nuestro trabajador de servicio 
@@ -97,14 +99,11 @@ if ("serviceWorker" in navigator) {
 Con esta actualización, hemos transformado nuestra 
 aplicación web habitual en una PWA.
  */
-    window.addEventListener("load", function() {
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
       navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
+      .register("/serviceWorker.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err))
+  })
 }
-
-
-
-
